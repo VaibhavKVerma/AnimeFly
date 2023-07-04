@@ -1,11 +1,11 @@
 const Header = () => {
   return (
-    <div class="2xl:container 2xl:mx-auto">
-      <div class="bg-white rounded shadow-lg py-5 px-7">
-        <nav class="flex justify-between">
-          <div class="flex items-center space-x-3 lg:pr-16 pr-6">
+    <div className="2xl:container 2xl:mx-auto">
+      <div className="bg-white py-5 px-7">
+        <nav className="flex justify-between">
+          <div className="flex items-center space-x-3 lg:pr-16 pr-6">
             <svg
-              class="cursor-pointer"
+              className="cursor-pointer"
               width="34"
               height="34"
               viewBox="0 0 34 34"
@@ -17,32 +17,22 @@ const Header = () => {
                 fill="#1F2937"
               />
             </svg>
-            <h2 class="font-normal text-2xl leading-6 text-gray-800">
+            <h2 className="font-normal text-2xl leading-6 text-gray-800">
               AnimeFly
             </h2>
           </div>
 
-          <ul class="hidden md:flex flex-auto space-x-2">
-            <li
-              onclick="selected()"
-              class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-            >
+          <ul className="hidden md:flex flex-auto space-x-2">
+            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Home
             </li>
-            <li
-              onclick="selected()"
-              class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-            >
+            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Schedules
             </li>
-            <li
-              onclick="selected()"
-              class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-            >
+            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Recommendations
             </li>
           </ul>
-          
         </nav>
       </div>
     </div>

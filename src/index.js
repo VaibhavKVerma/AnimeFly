@@ -21,7 +21,6 @@ const store = configureStore({
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
       {

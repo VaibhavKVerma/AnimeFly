@@ -31,7 +31,7 @@ const Body = () => {
         <div>
           <select
             onChange={selectFilterType}
-            className="border-2 border-l-red-950"
+            className="border-2 border-l-red-950 data-te-select-init"
             value={filter}
           >
             {topAnimeFilter.map((filter) => (
@@ -46,7 +46,7 @@ const Body = () => {
         <Loader />
       ) : topAnime ? (
         <div>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
             {topAnime?.data.map((anime, idx) => (
               <CardComponent
                 data={anime}

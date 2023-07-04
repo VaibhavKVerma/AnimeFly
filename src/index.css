@@ -58,3 +58,8 @@
     top: 0px;
   }
 }
+
+iframe {
+  width: 100vw;
+  height: 1000px;
+}
