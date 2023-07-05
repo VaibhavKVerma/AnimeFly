@@ -1,4 +1,3 @@
-import { useSpring } from "@react-spring/web";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -43,8 +42,8 @@ const CardComponent = ({ data }) => {
   };
 
   return (
-    <Link to={`anime/${mal_id}`}>
-      <div className="relative w-fit">
+    <div className="relative w-fit">
+      <Link to={`anime/${mal_id}`}>
         <div
           key={mal_id}
           className="w-64 cursor-pointer p-2 group hover:bg-slate-200  rounded-lg"
@@ -61,8 +60,8 @@ const CardComponent = ({ data }) => {
           </div>
         </div>
         {hover && infoDiv()}
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 export default CardComponent;

@@ -18,6 +18,17 @@ export const animeListApi = createApi({
     }),
     getAnimeFullById: builder.query({
       query: (id) => `anime/${id}/full`
+    }),
+    getAnimeRecommendationsById: builder.query({
+      query: (id) => `anime/${id}/recommendations`
+    }),
+    getAnimeRelationsById: builder.query({
+      query: (id) => `anime/${id}/relations`
+    }),
+    getPicturesById: builder.query({
+      query: (info) => {
+        return `${info.type}/${info.mal_id}/pictures`
+      }
     })
   }),
 });
@@ -25,5 +36,8 @@ export const animeListApi = createApi({
 export const {
   useLazyGetTopAnimeQuery,
   useLazyGetSchedulesQuery,
+  useGetAnimeRelationsByIdQuery,
+  useGetAnimeRecommendationsByIdQuery,
+  useGetPicturesByIdQuery,
   useGetAnimeFullByIdQuery
 } = animeListApi;

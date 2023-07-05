@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { topAnimeFilter } from "../ApiConstants";
+import { topAnimeFilter } from "../Constants";
 import { useLazyGetTopAnimeQuery } from "../redux/animeListApi";
 import CardComponent from "./CardComponent";
 import Loader from "./Loader";

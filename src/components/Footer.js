@@ -30,30 +30,33 @@ const Footer = () => {
         <ul className="mt-8 flex justify-center gap-6 md:gap-8">
           <li>
             <a
-              href="/"
+              href="https://vaibhavkumarverma.netlify.app/"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
             >
-              <span className="sr-only">Facebook</span>
+              <span className="sr-only">Portfolio</span>
               <svg
+                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+                version="1.1"
+                id="Icons"
+                viewBox="0 0 32 32"
+                xmlSpace="preserve"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clipRule="evenodd"
-                />
+                <g>
+                  <path d="M26,9h-2.6c-1.2-3-4.1-5-7.4-5c-3.3,0-6.2,2-7.4,5H6c-1.7,0-3,1.3-3,3v0.6C3,16.1,5.9,19,9.4,19h13.3   c3.5,0,6.4-2.9,6.4-6.4V12C29,10.3,27.7,9,26,9z M16,6c2.2,0,4.1,1.2,5.2,3H10.8C11.9,7.2,13.8,6,16,6z" />
+                  <path d="M23,21C23,21,23,21,23,21l0,2c0,0.6-0.4,1-1,1s-1-0.4-1-1v-2H11v2c0,0.6-0.4,1-1,1s-1-0.4-1-1v-2c0,0,0,0,0,0   c-2.4-0.1-4.5-1.2-6-2.9V25c0,1.7,1.3,3,3,3h20c1.7,0,3-1.3,3-3v-6.9C27.5,19.8,25.4,20.9,23,21z" />
+                </g>
               </svg>
             </a>
           </li>
 
           <li>
             <a
-              href="/"
+              href="https://www.instagram.com/web__ohhh/"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"
@@ -76,7 +79,7 @@ const Footer = () => {
 
           <li>
             <a
-              href="/"
+              href="https://github.com/VaibhavKVerma/AnimeFly"
               rel="noreferrer"
               target="_blank"
               className="text-gray-700 transition hover:text-gray-700/75"

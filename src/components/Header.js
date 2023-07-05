@@ -3,7 +3,7 @@ const Header = () => {
     <div className="2xl:container 2xl:mx-auto">
       <div className="bg-white py-5 px-7">
         <nav className="flex justify-between">
-          <div className="flex items-center space-x-3 lg:pr-16 pr-6">
+          <a href="/" className="flex items-center space-x-3 lg:pr-16 pr-6">
             <svg
               className="cursor-pointer"
               width="34"
@@ -20,12 +20,12 @@ const Header = () => {
             <h2 className="font-normal text-2xl leading-6 text-gray-800">
               AnimeFly
             </h2>
-          </div>
+          </a>
 
           <ul className="hidden md:flex flex-auto space-x-2">
-            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
+            <a href="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Home
-            </li>
+            </a>
             <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Schedules
             </li>
