@@ -70,6 +70,7 @@ const InfoDiv = ({ data }) => {
         <div className="flex-1 ml-20">
           <div>
             <img
+              alt=""
               src={large_image_url}
               className="rounded-xl h-[300px] mb-5 shadow-2xl"
             />
