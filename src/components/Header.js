@@ -23,13 +23,13 @@ const Header = () => {
           </a>
 
           <ul className="hidden md:flex flex-auto space-x-2">
-            <a href="/" className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
+            <a href="/" className="focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-slate-700 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Home
             </a>
-            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
+            <a href="/schedule" className="focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Schedules
-            </li>
-            <li className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
+            </a>
+            <li className="focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
               Recommendations
             </li>
           </ul>

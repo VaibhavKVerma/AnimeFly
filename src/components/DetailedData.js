@@ -6,6 +6,10 @@ import { titles, youtubeVideo } from "../Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveSelect } from "../redux/reducers/detailedSlice";
 import SimilarCard from "./SimillarCard";
+import CharacterInfo from "./CharacterInfo";
+import StaffInfo from "./StaffInfo";
+import ReviewCard from "./ReviewCard";
+import EpisodesCard from "./EpisodesCard";
 
 const renderPerData = (key, data) => {
   return data ? (
@@ -123,6 +127,10 @@ const InfoDiv = ({ data }) => {
             ))}
           </div>
           {active === 0 && <SimilarCard id={mal_id} />}
+          {active === 1 && <CharacterInfo id={mal_id} />}
+          {active === 2 && <EpisodesCard id={mal_id} />}
+          {active === 3 && <StaffInfo id={mal_id} />}
+          {active === 4 && <ReviewCard id={mal_id} />}
         </div>
       </div>
     </div>

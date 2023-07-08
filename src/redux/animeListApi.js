@@ -17,19 +17,36 @@ export const animeListApi = createApi({
       query: (filter) => `schedules?filter=${filter}`,
     }),
     getAnimeFullById: builder.query({
-      query: (id) => `anime/${id}/full`
+      query: (id) => `anime/${id}/full`,
     }),
     getAnimeRecommendationsById: builder.query({
-      query: (id) => `anime/${id}/recommendations`
+      query: (id) => `anime/${id}/recommendations`,
     }),
     getAnimeRelationsById: builder.query({
-      query: (id) => `anime/${id}/relations`
+      query: (id) => `anime/${id}/relations`,
     }),
     getPicturesById: builder.query({
-      query: (info) => {
-        return `${info.type}/${info.mal_id}/pictures`
-      }
-    })
+      query: (info) => `${info.type}/${info.mal_id}/pictures`,
+    }),
+    getCharactersById: builder.query({
+      query: (id) => `anime/${id}/characters`,
+      transformResponse: (response) => {
+        const main = response.data.filter((res) => res.role === "Main");
+        const support = response.data
+          .filter((res) => res.role === "Supporting")
+          .sort((a, b) => b.favorites - a.favorites);
+        return [...main, ...support];
+      },
+    }),
+    getStaffsById: builder.query({
+      query: (id) => `anime/${id}/staff`,
+    }),
+    getReviewsById: builder.query({
+      query: (id) => `anime/${id}/reviews`,
+    }),
+    getEpisodesById: builder.query({
+      query: (params) => `anime/${params.id}/episodes?page=${params.page}`,
+    }),
   }),
 });
 
@@ -39,5 +56,9 @@ export const {
   useGetAnimeRelationsByIdQuery,
   useGetAnimeRecommendationsByIdQuery,
   useGetPicturesByIdQuery,
-  useGetAnimeFullByIdQuery
+  useGetAnimeFullByIdQuery,
+  useGetCharactersByIdQuery,
+  useGetStaffsByIdQuery,
+  useGetReviewsByIdQuery,
+  useLazyGetEpisodesByIdQuery
 } = animeListApi;

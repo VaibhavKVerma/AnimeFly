@@ -69,7 +69,7 @@ const RecommendationData = ({ data }) => {
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))]">
           {data.map(
             (info, idx) =>
-              ((!show && idx < 5) || show) && (
+              ((!show && idx < 6) || show) && (
                 <div
                   key={info.entry.mal_id}
                   className="group cursor-pointer w-min"
