@@ -1,9 +1,9 @@
 const ErrorPage = () => {
   return (
-    <div class="bg-gray-100 h-screen justify-center">
-      <center class="mt-24 m-auto">
+    <div className="bg-gray-100 h-screen justify-center">
+      <center className="mt-24 m-auto">
         <svg
-          class="emoji-404 "
+          className="emoji-404 "
           enable-background="new 0 0 226 249.135"
           height="249.135"
           id="Layer_1"
@@ -91,19 +91,19 @@ const ErrorPage = () => {
             stroke-width="8"
           />
         </svg>
-        <div class=" tracking-widest mt-4">
-          <span class="text-gray-500 text-6xl block">
+        <div className=" tracking-widest mt-4">
+          <span className="text-gray-500 text-6xl block">
             <span>4 0 4</span>
           </span>
-          <span class="text-gray-500 text-xl">
+          <span className="text-gray-500 text-xl">
             Sorry, We couldn't find what you are looking for!
           </span>
         </div>
       </center>
-      <center class="mt-6">
+      <center className="mt-6">
         <a
           href="/"
-          class="text-gray-500 font-mono text-xl bg-gray-200 p-3 rounded-md hover:shadow-md"
+          className="text-gray-500 font-mono text-xl bg-gray-200 p-3 rounded-md hover:shadow-md"
         >
           Go Home{" "}
         </a>

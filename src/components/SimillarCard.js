@@ -7,27 +7,30 @@ import {
 import Loader, { LoaderSmall } from "./Loader";
 import { useState } from "react";
 
-const RelationInfo = ({ info }) => {
-  const { data, isFetching } = useGetPicturesByIdQuery(info);
-  if (isFetching) return <LoaderSmall />;
+const RelationInfo = ({ info, imgData }) => {
+  console.log(info,imgData);
   return (
-    data && (
-      <div className="group cursor-pointer w-min">
-        <Link to={`/${info.type}/${info.mal_id}`}>
-          <img
-            className="h-[200px] min-w-[130px] rounded-md"
-            src={data.data[0].webp.large_image_url}
-            alt={info.mal_id}
-          />
-          <div className="text-slate-500 font-semibold group-hover:text-blue-500 mt-1">
-            {info.name.length > 30
-              ? `${info.name.substring(0, 30)}....`
-              : info.name}
-          </div>
-        </Link>
-      </div>
-    )
+    <div className="group cursor-pointer w-min">
+      <Link to={`/${info.type}/${info.mal_id}`}>
+        <img
+          className="h-[200px] min-w-[130px] rounded-md"
+          src={imgData.data[0].webp.large_image_url}
+          alt={info.mal_id}
+        />
+        <div className="text-slate-500 font-semibold group-hover:text-blue-500 mt-1">
+          {info.name.length > 30
+            ? `${info.name.substring(0, 30)}....`
+            : info.name}
+        </div>
+      </Link>
+    </div>
   );
+};
+
+const RelationFetching = ({ info }) => {
+  const { data, isFetching } = useGetPicturesByIdQuery(info);
+  if(isFetching) return <LoaderSmall />;
+  return data && data.map((ele,idx) => <RelationInfo info={info[idx]} imgData={ele} key={idx} />)
 };
 
 const RelationData = ({ data }) => {
@@ -40,9 +43,10 @@ const RelationData = ({ data }) => {
               {ele.relation}
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))]">
-              {ele.entry.map((info) => (
+              {/* {ele.entry.map((info) => (
                 <RelationInfo info={info} key={info.mal_id} />
-              ))}
+              ))} */}
+              <RelationFetching info={ele.entry} />
             </div>
           </div>
         );
@@ -57,7 +61,9 @@ const RecommendationData = ({ data }) => {
   return (
     <div>
       <div className="flex justify-between">
-        <div className="text-slate-700 text-xl underline font-semibold">Recommendations</div>
+        <div className="text-slate-700 text-xl underline font-semibold">
+          Recommendations
+        </div>
         <div
           className="w-max cursor-pointer  text-slate-600 font-semibold hover:text-blue-500 mt-1"
           onClick={() => setShow(!show)}

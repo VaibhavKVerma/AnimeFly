@@ -1,9 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { JIKAN_API } from "../Constants/Api";
+import { animeApi } from "../Constants/Constants";
+import axios from "axios";
+
+const createPromise = async (info) => await axios.get(`${JIKAN_API}${info.type}/${info.mal_id}/pictures`)
 
 export const animeListApi = createApi({
-  reducerPath: "animeApi",
+  reducerPath: animeApi,
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.jikan.moe/v4/",
+    baseUrl: JIKAN_API,
   }),
   endpoints: (builder) => ({
     getTopAnime: builder.query({
@@ -25,8 +30,14 @@ export const animeListApi = createApi({
     getAnimeRelationsById: builder.query({
       query: (id) => `anime/${id}/relations`,
     }),
+    //TODO
     getPicturesById: builder.query({
-      query: (info) => `${info.type}/${info.mal_id}/pictures`,
+      queryFn: async (request) => {
+        let response = [];
+        await request.map(async (info)=> await createPromise(info));
+        response = response.map((ele) => ele.data);
+        return {data: response};
+    },
     }),
     getCharactersById: builder.query({
       query: (id) => `anime/${id}/characters`,

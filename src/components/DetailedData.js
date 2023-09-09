@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useGetAnimeFullByIdQuery } from "../redux/animeListApi";
 import Loader from "./Loader";
 import ErrorPage from "./ErrorPage";
-import { titles, youtubeVideo } from "../Constants";
+import { titles, youtubeVideo } from "../Constants/Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveSelect } from "../redux/reducers/detailedSlice";
 import SimilarCard from "./SimillarCard";

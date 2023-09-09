@@ -23,3 +23,6 @@ export const weeks = [
   "friday",
   "saturday",
 ];
+
+export const animeApi = "animeApi";
+export const timeApi = "timeApi";
