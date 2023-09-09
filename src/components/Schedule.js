@@ -1,9 +1,11 @@
 import { weeks } from "../Constants";
-import Loader, { LoaderSmall } from "./Loader";
+import Loader from "./Loader";
 import { useGetIPTimeQuery } from "../redux/currentTimeApi";
 import { useLazyGetSchedulesQuery } from "../redux/animeListApi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+/* eslint-disable */
 
 const DataCard = ({ info }) => {
   return (
@@ -23,11 +25,11 @@ const DataCard = ({ info }) => {
 };
 
 const ScheduleInfo = ({ day }) => {
-  const [getSchedules, { data: scheduleData, isFetching }] =
+  const [getSchedules, { data: scheduleData }] =
     useLazyGetSchedulesQuery();
   const [selectedDay, setSelectedDay] = useState(day);
   const [data, setData] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(true);
 
   useEffect(() => {
