@@ -1,31 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
 import { Provider } from "react-redux";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Body from "./components/Body";
-import DetailedData from "./components/DetailedData";
+import { RouterProvider } from "react-router-dom";
 import store from "./store";
-
-const router = createBrowserRouter([
-  {
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/anime/:id",
-        element: <DetailedData />,
-        loader: ({params}) => {
-          return params.id;
-        }
-      }
-    ],
-  },
-]);
+import router from "./Routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

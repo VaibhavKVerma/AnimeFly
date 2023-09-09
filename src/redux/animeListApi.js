@@ -14,7 +14,7 @@ export const animeListApi = createApi({
       },
     }),
     getSchedules: builder.query({
-      query: (filter) => `schedules?filter=${filter}`,
+      query: (params) => `schedules?filter=${params.filter}&page=${params.page}`,
     }),
     getAnimeFullById: builder.query({
       query: (id) => `anime/${id}/full`,

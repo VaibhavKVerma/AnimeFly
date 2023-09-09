@@ -48,10 +48,7 @@ const Body = () => {
         <div>
           <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-4">
             {topAnime?.data.map((anime, idx) => (
-              <CardComponent
-                data={anime}
-                key={idx}
-              />
+              <CardComponent data={anime} key={idx} />
             ))}
           </div>
           <Pagination />
