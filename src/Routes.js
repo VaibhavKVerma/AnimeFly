@@ -4,6 +4,7 @@ import Body from "./components/Body";
 import DetailedData from "./components/DetailedData";
 import Schedule from "./components/Schedule";
 import UpcomingDev from "./components/UpcomingDev";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
             path: "/upcomingdev",
             element: <UpcomingDev />
+        },
+        {
+          path: "*",
+          element: <ErrorPage />
         }
       ],
     },

@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="2xl:container 2xl:mx-auto">
       <div className="bg-white py-5 px-7">
         <nav className="flex justify-between">
-          <a href="/" className="flex items-center space-x-3 lg:pr-16 pr-6">
+          <Link to="/" className="flex items-center space-x-3 lg:pr-16 pr-6">
             <svg
               className="cursor-pointer"
               width="34"
@@ -20,7 +22,7 @@ const Header = () => {
             <h2 className="font-normal text-2xl leading-6 text-gray-800">
               AnimeFly
             </h2>
-          </a>
+          </Link>
 
           <ul className="hidden md:flex flex-auto space-x-2">
             <a
@@ -29,15 +31,18 @@ const Header = () => {
             >
               Home
             </a>
-            <a
-              href="/schedule"
+            <Link
+              to="/schedule"
               className="text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs shadow-md rounded"
             >
               Schedules
-            </a>
-            <li className="text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs shadow-md rounded">
+            </Link>
+            <Link
+              to="/recommendation"
+              className="text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs shadow-md rounded"
+            >
               Recommendations
-            </li>
+            </Link>
             <div className="relative flex w-full flex-wrap items-stretch">
               <input
                 type="search"
