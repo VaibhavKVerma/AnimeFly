@@ -9,7 +9,7 @@ const HeaderNavRenderer = (link, text, active) => {
     <Link
       to={link}
       className={`${
-        active
+        active === link
           ? "text-white bg-slate-700"
           : "text-gray-600 border border-white bg-gray-50"
       } cursor-pointer px-3 py-2.5 font-normal text-xs shadow-md rounded`}

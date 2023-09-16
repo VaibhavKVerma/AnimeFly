@@ -6,7 +6,7 @@ import {
 } from "./Svg";
 
 export const topAnimeFilter = [
-  { key: "bypopularity", text: "By Popularity" },
+  { key: "bypopularity", text: "Popularity" },
   { key: "airing", text: "Airing" },
   { key: "favorite", text: "Favourite" },
 ];

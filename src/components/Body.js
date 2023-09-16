@@ -23,15 +23,15 @@ const Body = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-end mb-8">
-        <div className="text-4xl font-semibold text-red-700 font-sans">
+      <div className="flex justify-between items-center mb-8 mt-8 ml-4 mr-4">
+        <div className="text-4xl font-semibold text-red-700 font-sans underline">
           Top Anime
         </div>
-        <div className="w-4/5 h-1 bg-red-600" />
         <div>
+          <span className="text-xl font-semibold text-red-700 font-sans">Sort By : </span> 
           <select
             onChange={selectFilterType}
-            className="border-2 border-l-red-950 data-te-select-init"
+            className="border-2 rounded-lg outline-none p-2 border-red-700 data-te-select-init"
             value={filter}
           >
             {topAnimeFilter.map((filter) => (
