@@ -1,5 +1,5 @@
-import { weeks } from "../Constants/Constants";
-import Loader from "./Loader";
+import { weeks } from "../constants/Constants";
+import Loader from "../utils/Loader";
 import { useGetIPTimeQuery } from "../redux/currentTimeApi";
 import { useLazyGetSchedulesQuery } from "../redux/animeListApi";
 import { useEffect, useState } from "react";

@@ -1,15 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { useGetAnimeFullByIdQuery } from "../redux/animeListApi";
-import Loader from "./Loader";
-import ErrorPage from "./ErrorPage";
-import { titles, youtubeVideo } from "../Constants/Constants";
+import Loader from "../utils/Loader";
+import ErrorPage from "./Error";
+import { titles, youtubeVideo } from "../constants/Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveSelect } from "../redux/reducers/detailedSlice";
-import SimilarCard from "./SimillarCard";
-import CharacterInfo from "./CharacterInfo";
-import StaffInfo from "./StaffInfo";
-import ReviewCard from "./ReviewCard";
-import EpisodesCard from "./EpisodesCard";
+import SimilarCard from "../components/SimillarCard";
+import CharacterInfo from "../components/CharacterInfo";
+import StaffInfo from "../components/StaffInfo";
+import ReviewCard from "../components/ReviewCard";
+import EpisodesCard from "../components/EpisodesCard";
 
 const renderPerData = (key, data) => {
   return data ? (

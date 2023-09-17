@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetCharactersByIdQuery } from "../redux/animeListApi";
-import { LoaderSmall } from "./Loader";
+import { LoaderSmall } from "../utils/Loader";
 
 const CharacterData = ({ data }) => {
   const [showMore, setShowMore] = useState(false);

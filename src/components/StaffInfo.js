@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetStaffsByIdQuery } from "../redux/animeListApi";
-import { LoaderSmall } from "./Loader";
+import { LoaderSmall } from "../utils/Loader";
 
 const StaffData = ({ data }) => {
   const [showMore, setShowMore] = useState(false);

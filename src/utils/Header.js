@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { searchValue } from "../redux/reducers/searchSlice";
-import { SearchLogo, SvgLogo } from "../Constants/Svg";
-import { headerNav } from "../Constants/Constants";
+import { SearchLogo, SvgLogo } from "../constants/Svg";
+import { headerNav } from "../constants/Constants";
 
 const HeaderNavRenderer = (link, text, active) => {
   return (
     <Link
       to={link}
       className={`${
-        active === link
+        active
           ? "text-white bg-slate-700"
           : "text-gray-600 border border-white bg-gray-50"
       } cursor-pointer px-3 py-2.5 font-normal text-xs shadow-md rounded`}
@@ -22,6 +22,9 @@ const HeaderNavRenderer = (link, text, active) => {
 const Header = () => {
   const searchVal = useSelector((state) => state.search.value);
   const dispatch = useDispatch();
+
+  const location = useLocation();
+  console.log("Vaibhav Debug location: ", location.pathname);
 
   return (
     <div className="2xl:container 2xl:mx-auto">
@@ -36,7 +39,11 @@ const Header = () => {
 
           <ul className="hidden md:flex flex-auto space-x-2">
             {headerNav.map((headerLink) =>
-              HeaderNavRenderer(headerLink.link, headerLink.title, true)
+              HeaderNavRenderer(
+                headerLink.link,
+                headerLink.title,
+                location.pathname === headerLink.link
+              )
             )}
             <div className="relative flex w-full flex-wrap items-stretch">
               <input

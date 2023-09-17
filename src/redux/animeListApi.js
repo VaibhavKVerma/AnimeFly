@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { JIKAN_API } from "../Constants/Api";
-import { animeApi } from "../Constants/Constants";
+import { JIKAN_API } from "../constants/Api";
+import { animeApi } from "../constants/Constants";
 import axios from "axios";
 
 const createPromise = async (info) => await axios.get(`${JIKAN_API}${info.type}/${info.mal_id}/pictures`)

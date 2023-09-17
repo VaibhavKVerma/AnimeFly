@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { topAnimeFilter } from "../Constants/Constants";
+import { topAnimeFilter } from "../constants/Constants";
 import { useLazyGetTopAnimeQuery } from "../redux/animeListApi";
-import CardComponent from "./CardComponent";
-import Loader from "./Loader";
+import CardComponent from "../components/CardComponent";
+import Loader from "../utils/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { filterAction } from "../redux/reducers/filterReducer";
-import Pagination from "./Pagination";
+import Pagination from "../components/Pagination";
 
-const Body = () => {
+const Home = () => {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.filter.type);
   const [getTopAnime, { data: topAnime, isFetching }] =
@@ -59,4 +59,4 @@ const Body = () => {
     </div>
   );
 };
-export default Body;
+export default Home;

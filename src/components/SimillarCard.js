@@ -4,7 +4,7 @@ import {
   useGetAnimeRelationsByIdQuery,
   useGetPicturesByIdQuery,
 } from "../redux/animeListApi";
-import Loader, { LoaderSmall } from "./Loader";
+import Loader, { LoaderSmall } from "../utils/Loader";
 import { useState } from "react";
 
 const RelationInfo = ({ info, imgData }) => {

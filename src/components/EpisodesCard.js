@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLazyGetEpisodesByIdQuery } from "../redux/animeListApi";
-import { LoaderSmall } from "./Loader";
+import { LoaderSmall } from "../utils/Loader";
 
 const RenderInfo = ({ episode, id }) => {
   const [hover, setHover] = useState(false);

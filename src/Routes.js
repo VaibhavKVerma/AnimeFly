@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Body from "./components/Body";
-import DetailedData from "./components/DetailedData";
-import Schedule from "./components/Schedule";
-import UpcomingDev from "./components/UpcomingDev";
-import ErrorPage from "./components/ErrorPage";
+import Home from "./pages/Home";
+import AnimeData from "./pages/AnimeData";
+import Schedule from "./pages/Schedule";
+import UpcomingDev from "./pages/UpcomingDev";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
     {
@@ -12,11 +12,11 @@ const router = createBrowserRouter([
       children: [
         {
           path: "/",
-          element: <Body />,
+          element: <Home />,
         },
         {
           path: "/anime/:id",
-          element: <DetailedData />,
+          element: <AnimeData />,
           loader: ({params}) => {
             return params.id;
           }
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
           path: "*",
-          element: <ErrorPage />
+          element: <Error />
         }
       ],
     },

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { SvgLogo } from "../Constants/Svg";
-import { footerNav } from "../Constants/Constants";
+import { SvgLogo } from "../constants/Svg";
+import { footerNav } from "../constants/Constants";
 
 const logoComponentRenderer = (url, text, component) => {
   return (

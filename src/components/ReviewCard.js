@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetReviewsByIdQuery } from "../redux/animeListApi";
-import { LoaderSmall } from "./Loader";
+import { LoaderSmall } from "../utils/Loader";
 
 const Review = ({ review }) => {
   const [showMore, setShowMore] = useState(true);
