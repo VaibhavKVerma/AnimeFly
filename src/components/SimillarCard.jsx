@@ -5,7 +5,7 @@ import {
   useGetPicturesByIdQuery,
 } from "../redux/animeListApi";
 import Loader, { LoaderSmall } from "../utils/Loader";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const RelationInfo = ({ info, imgData }) => {
   console.log(info,imgData);
@@ -120,4 +120,4 @@ const SimilarCard = ({ id }) => {
     );
 };
 
-export default SimilarCard;
+export default React.memo(SimilarCard);

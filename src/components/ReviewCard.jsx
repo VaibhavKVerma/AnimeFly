@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useGetReviewsByIdQuery } from "../redux/animeListApi";
 import { LoaderSmall } from "../utils/Loader";
 
@@ -55,4 +55,4 @@ const ReviewCard = ({ id }) => {
   return data ? <ReviewData data={data.data} /> : null;
 };
 
-export default ReviewCard;
+export default React.memo(ReviewCard);

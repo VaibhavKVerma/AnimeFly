@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useGetCharactersByIdQuery } from "../redux/animeListApi";
 import { LoaderSmall } from "../utils/Loader";
 
@@ -38,4 +38,4 @@ const CharacterInfo = ({ id }) => {
   return data ? <CharacterData data={data} /> : null;
 };
 
-export default CharacterInfo;
+export default React.memo(CharacterInfo);

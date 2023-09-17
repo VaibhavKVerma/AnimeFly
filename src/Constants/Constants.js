@@ -33,6 +33,7 @@ export const weeks = [
 
 export const animeApi = "animeApi";
 export const timeApi = "timeApi";
+export const logoApi = "logoApi";
 
 export const footerNav = [
   {
@@ -71,3 +72,5 @@ export const headerNav = [
     title: "Recommendation"
   }
 ];
+
+export const minQueryLength = 2;

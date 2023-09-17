@@ -4,7 +4,7 @@ import { footerNav } from "../constants/Constants";
 
 const logoComponentRenderer = (url, text, component) => {
   return (
-    <li>
+    <li key={text}>
       <Link
         to={url}
         rel="noreferrer"

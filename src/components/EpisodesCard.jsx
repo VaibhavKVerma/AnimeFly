@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLazyGetEpisodesByIdQuery } from "../redux/animeListApi";
 import { LoaderSmall } from "../utils/Loader";
 
@@ -81,4 +81,4 @@ const EpisodesCard = ({ id }) => {
   );
 };
 
-export default EpisodesCard;
+export default React.memo(EpisodesCard);

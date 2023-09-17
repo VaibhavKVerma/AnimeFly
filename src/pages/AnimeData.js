@@ -10,8 +10,9 @@ import CharacterInfo from "../components/CharacterInfo";
 import StaffInfo from "../components/StaffInfo";
 import ReviewCard from "../components/ReviewCard";
 import EpisodesCard from "../components/EpisodesCard";
+import { useGetBrandLogoQuery } from "../redux/logoApi";
 
-const renderPerData = (key, data) => {
+const renderInfoData = (key, data) => {
   return data ? (
     <div className="mb-3">
       <div className="text-slate-700 font-semibold">
@@ -20,6 +21,18 @@ const renderPerData = (key, data) => {
       <div className="text-slate-500">{data}</div>
     </div>
   ) : null;
+};
+
+const RenderStreamer = ({ streamer }) => {
+  const { data } = useGetBrandLogoQuery(streamer.name.toLowerCase());
+  return (
+    <div className="mb-3">
+      <a className="text-slate-500 items-center flex gap-5 hover:text-blue-400" href={streamer.url}>
+        {data && <img src={data[0].icon} alt={data[0].domain} />}
+        <div>{streamer.name}</div>
+      </a>
+    </div>
+  );
 };
 
 const InfoDiv = ({ data }) => {
@@ -39,7 +52,7 @@ const InfoDiv = ({ data }) => {
     // producers,
     // relations,
     status,
-    // streaming,
+    streaming,
     rank,
     popularity,
     synopsis,
@@ -53,9 +66,11 @@ const InfoDiv = ({ data }) => {
     },
   } = data.data;
 
-  const OnClickHandler = (idx) => {
+  const onClickHandler = (idx) => {
     dispatch(changeActiveSelect(idx));
   };
+
+  const infoData = [ages,year,status,type,rating,episodes,favorites,duration];
 
   return (
     <div>
@@ -68,7 +83,6 @@ const InfoDiv = ({ data }) => {
             className="opacity-25 pointer-events-none mt-[-350px]"
           ></iframe>
         </div>
-        
       </div>
       <div className="flex gap-4 relative z-10 mt-[-200px]">
         <div className="flex-1 ml-20">
@@ -103,21 +117,18 @@ const InfoDiv = ({ data }) => {
       <div className="flex mt-11 justify-between gap-8">
         <div>
           <div className="rounded-md p-7 ml-20 w-max bg-white shadow-lg">
-            {renderPerData("ages", ages)}
-            {renderPerData("year", year)}
-            {renderPerData("status", status)}
-            {renderPerData("type", type)}
-            {renderPerData("rating", rating)}
-            {renderPerData("episodes", episodes)}
-            {renderPerData("favorites", favorites)}
-            {renderPerData("duration", duration)}
+            {infoData.map((info) => renderInfoData(Object.keys({info})[0],info))}
+            {streaming.map((streamer,idx) => (
+              <RenderStreamer key={idx} streamer={streamer} />
+            ))}
           </div>
         </div>
         <div className="rounded-md p-7 mr-20 bg-white shadow-lg w-full">
           <div className="flex gap-5 justify-around">
             {titles.map((title, idx) => (
               <div
-                onClick={() => OnClickHandler(idx)}
+                key={idx}
+                onClick={() => onClickHandler(idx)}
                 className={`text-md ${
                   active === idx ? "text-slate-700" : "text-slate-500"
                 }  font-semibold cursor-pointer hover:text-blue-500`}
@@ -137,7 +148,7 @@ const InfoDiv = ({ data }) => {
   );
 };
 
-const DetailedData = () => {
+const AnimeData = () => {
   const id = useLoaderData();
   const { data, isFetching, error } = useGetAnimeFullByIdQuery(id);
 
@@ -149,4 +160,4 @@ const DetailedData = () => {
   );
 };
 
-export default DetailedData;
+export default AnimeData;

@@ -1,14 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { JIKAN_API } from "../constants/Api";
+import { JIKAN_API_V4 } from "../constants/Api";
 import { animeApi } from "../constants/Constants";
 import axios from "axios";
 
-const createPromise = async (info) => await axios.get(`${JIKAN_API}${info.type}/${info.mal_id}/pictures`)
+const createPromise = async (info) =>
+  await axios.get(`${JIKAN_API_V4}${info.type}/${info.mal_id}/pictures`);
 
 export const animeListApi = createApi({
   reducerPath: animeApi,
   baseQuery: fetchBaseQuery({
-    baseUrl: JIKAN_API,
+    baseUrl: JIKAN_API_V4,
   }),
   endpoints: (builder) => ({
     getTopAnime: builder.query({
@@ -19,7 +20,8 @@ export const animeListApi = createApi({
       },
     }),
     getSchedules: builder.query({
-      query: (params) => `schedules?filter=${params.filter}&page=${params.page}`,
+      query: (params) =>
+        `schedules?filter=${params.filter}&page=${params.page}`,
     }),
     getAnimeFullById: builder.query({
       query: (id) => `anime/${id}/full`,
@@ -34,10 +36,10 @@ export const animeListApi = createApi({
     getPicturesById: builder.query({
       queryFn: async (request) => {
         let response = [];
-        await request.map(async (info)=> await createPromise(info));
+        await request.map(async (info) => await createPromise(info));
         response = response.map((ele) => ele.data);
-        return {data: response};
-    },
+        return { data: response };
+      },
     }),
     getCharactersById: builder.query({
       query: (id) => `anime/${id}/characters`,
@@ -58,6 +60,9 @@ export const animeListApi = createApi({
     getEpisodesById: builder.query({
       query: (params) => `anime/${params.id}/episodes?page=${params.page}`,
     }),
+    getAnimeBySearch: builder.query({
+      query: (params) => `anime?order_by=mal_id&q=${params}`,
+    }),
   }),
 });
 
@@ -71,5 +76,6 @@ export const {
   useGetCharactersByIdQuery,
   useGetStaffsByIdQuery,
   useGetReviewsByIdQuery,
-  useLazyGetEpisodesByIdQuery
+  useLazyGetEpisodesByIdQuery,
+  useGetAnimeBySearchQuery
 } = animeListApi;

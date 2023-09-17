@@ -1,3 +1,5 @@
+import React from "react";
+
 export const LoaderSmall = () => {
   return (
     <div className="h-full">
@@ -14,4 +16,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default React.memo(Loader);

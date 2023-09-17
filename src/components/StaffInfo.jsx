@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useGetStaffsByIdQuery } from "../redux/animeListApi";
 import { LoaderSmall } from "../utils/Loader";
 
@@ -47,4 +47,4 @@ const StaffInfo = ({ id }) => {
   return data ? <StaffData data={data.data} /> : null;
 };
 
-export default StaffInfo;
+export default React.memo(StaffInfo);
