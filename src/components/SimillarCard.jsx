@@ -8,7 +8,6 @@ import Loader, { LoaderSmall } from "../utils/Loader";
 import React, { useState } from "react";
 
 const RelationInfo = ({ info, imgData }) => {
-  console.log(info,imgData);
   return (
     <div className="group cursor-pointer w-min">
       <Link to={`/${info.type}/${info.mal_id}`}>

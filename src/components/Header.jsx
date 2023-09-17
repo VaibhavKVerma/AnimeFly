@@ -57,9 +57,7 @@ const Header = () => {
                   }}
                 />
               </div>
-              <div className="absolute z-10 w-full max-h-[450px] mt-12 px-3 py-[0.25rem] bg-white rounded-l border border-solid border-neutral-300">
                 <SearchData />
-              </div>
             </div>
           </ul>
         </nav>

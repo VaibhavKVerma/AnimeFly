@@ -60,7 +60,6 @@ const EpisodesCard = ({ id }) => {
 
   useEffect(() => {
     if (data) {
-      console.log(data);
       setEpisode(e => [...e, ...data.data]);
       setShowLoadMore(data.pagination.has_next_page);
     }

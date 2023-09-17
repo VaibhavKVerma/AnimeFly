@@ -2,21 +2,34 @@ import React, { useState } from "react";
 import { useGetReviewsByIdQuery } from "../redux/animeListApi";
 import { LoaderSmall } from "../utils/Loader";
 
-const Review = ({ review }) => {
+const Review = ({ data }) => {
+  const {
+    user: {
+      images: {
+        webp: {
+          image_url
+        }
+      },
+      username
+    },
+    score,
+    review
+  } = data;
+
   const [showMore, setShowMore] = useState(true);
   return (
     <div className="flex border-2 bg-slate-300 rounded-xl py-5">
       <div className="flex-1 px-2">
         <img
           className="h-[100px] m-auto rounded-md"
-          src={review.user.images.webp.image_url}
+          src={image_url}
           alt=""
         />
         <div className="text-center font-semibold capitalize">
-          {review.user.username}
+          {username}
         </div>
         <div className="text-center font-semibold text-slate-700">
-          Rating : {review.score}/10
+          Rating : {score}/10
         </div>
       </div>
       <div className="flex-[8] pr-3">
@@ -24,8 +37,8 @@ const Review = ({ review }) => {
           className="text-slate-800"
           dangerouslySetInnerHTML={{
             __html: showMore
-              ? `${review.review.substring(0, 700)}....`
-              : review.review,
+              ? `${review.substring(0, 700)}....`
+              : review,
           }}
         ></div>
         <p
@@ -43,7 +56,7 @@ const ReviewData = ({ data }) => {
   return (
     <div className="mt-6">
       {data.map((review, idx) => (
-        <Review review={review} key={idx} />
+        <Review data={review} key={idx} />
       ))}
     </div>
   );

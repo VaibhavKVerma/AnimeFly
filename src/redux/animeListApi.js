@@ -61,7 +61,7 @@ export const animeListApi = createApi({
       query: (params) => `anime/${params.id}/episodes?page=${params.page}`,
     }),
     getAnimeBySearch: builder.query({
-      query: (params) => `anime?order_by=mal_id&q=${params}`,
+      query: (params) => `anime?order_by=favorites&sort=desc&q=${params}`,
     }),
   }),
 });

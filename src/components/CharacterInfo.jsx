@@ -14,15 +14,24 @@ const CharacterData = ({ data }) => {
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))]">
         {data.map((ele, idx) => {
+          const {
+            name,
+            images: {
+              webp: { image_url },
+            },
+          } = ele.character;
+
           return (
             ((!showMore && idx < 18) || showMore) && (
               <div key={idx}>
                 <img
                   className="w-[150px] h-[220px] rounded-xl"
-                  src={ele.character.images.webp.image_url}
-                  alt={ele.character.name}
+                  src={image_url}
+                  alt={name}
                 />
-                <div className="mt-1 mb-3 font-semibold text-slate-600">{ele.character.name.split(", ").reverse().join(" ")}</div>
+                <div className="mt-1 mb-3 font-semibold text-slate-600">
+                  {name.split(", ").reverse().join(" ")}
+                </div>
               </div>
             )
           );
