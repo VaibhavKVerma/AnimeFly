@@ -1,4 +1,4 @@
-import { ErrorLogo } from "../constants/Svg";
+import { ErrorLogo } from "../Constants/Svg";
 
 const ErrorPage = () => {
   return (

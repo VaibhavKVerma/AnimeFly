@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { WORLD_TIME_API } from "../constants/Api";
-import { timeApi } from "../constants/Constants";
+import { WORLD_TIME_API } from "../Constants/Api";
+import { actionConstant } from "../Constants/Constants";
 
 export const currentTimeApi = createApi({
-  reducerPath: timeApi,
+  reducerPath: actionConstant.timeApi,
   baseQuery: fetchBaseQuery({
     baseUrl: WORLD_TIME_API,
   }),

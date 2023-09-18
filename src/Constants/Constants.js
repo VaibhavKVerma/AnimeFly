@@ -31,9 +31,19 @@ export const weeks = [
   "saturday",
 ];
 
+export const actionConstant = {
+  animeApi : "animeApi",
+  timeApi : "timeApi",
+  logoApi : "logoApi",
+  detailed : "detailed",
+  search : "search"
+}
+
 export const animeApi = "animeApi";
 export const timeApi = "timeApi";
 export const logoApi = "logoApi";
+export const detailed = "detailed";
+export const search = "search";
 
 export const footerNav = [
   {

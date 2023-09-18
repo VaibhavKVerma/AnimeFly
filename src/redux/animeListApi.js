@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { JIKAN_API_V4 } from "../constants/Api";
-import { animeApi } from "../constants/Constants";
+import { JIKAN_API_V4 } from "../Constants/Api";
+import { actionConstant } from "../Constants/Constants";
 import axios from "axios";
 
 const createPromise = async (info) =>
   await axios.get(`${JIKAN_API_V4}${info.type}/${info.mal_id}/pictures`);
 
 export const animeListApi = createApi({
-  reducerPath: animeApi,
+  reducerPath: actionConstant.animeApi,
   baseQuery: fetchBaseQuery({
     baseUrl: JIKAN_API_V4,
   }),

@@ -1,5 +1,5 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import { topAnimeFilter } from "../../constants/Constants";
+import { topAnimeFilter } from "../../Constants/Constants";
 
 export const filterAction = createAction("getTopAnime/filter");
 

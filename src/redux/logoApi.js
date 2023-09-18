@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { BRAND_FETCH_API_V2 } from "../constants/Api";
-import { logoApi } from "../constants/Constants";
+import { BRAND_FETCH_API_V2 } from "../Constants/Api";
+import { actionConstant } from "../Constants/Constants";
 
 export const brandLogoApi = createApi({
-  reducerPath: logoApi,
+  reducerPath: actionConstant.logoApi,
   baseQuery: fetchBaseQuery({
     baseUrl: BRAND_FETCH_API_V2,
   }),

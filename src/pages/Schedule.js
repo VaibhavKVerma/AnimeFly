@@ -1,4 +1,4 @@
-import { weeks } from "../constants/Constants";
+import { weeks } from "../Constants/Constants";
 import Loader from "../utils/Loader";
 import { useGetIPTimeQuery } from "../redux/currentTimeApi";
 import { useLazyGetSchedulesQuery } from "../redux/animeListApi";

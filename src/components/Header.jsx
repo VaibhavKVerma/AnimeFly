@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { searchValue } from "../redux/reducers/searchSlice";
-import { SvgLogo } from "../constants/Svg";
-import { headerNav } from "../constants/Constants";
+import { SvgLogo } from "../Constants/Svg";
+import { headerNav } from "../Constants/Constants";
 import SearchData from "./SearchData";
 
 const HeaderNavRenderer = (link, text, active) => {

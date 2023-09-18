@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { actionConstant } from "../../Constants/Constants";
 
 const detailedSlice = createSlice({
-  name: "detailed",
+  name: actionConstant.detailed,
   initialState: {
     activeSelect: 0,
   },

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGetAnimeBySearchQuery } from "../redux/animeListApi";
 import { useSelector } from "react-redux";
-import { minQueryLength } from "../constants/Constants";
+import { minQueryLength } from "../Constants/Constants";
 import { LoaderSmall } from "../utils/Loader";
 import { Link } from "react-router-dom";
 
