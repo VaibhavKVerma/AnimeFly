@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useGetAnimeBySearchQuery } from "../redux/animeListApi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { minQueryLength } from "../Constants/Constants";
 import { LoaderSmall } from "../utils/Loader";
 import { Link } from "react-router-dom";
+import { searchValue } from "../redux/reducers/searchSlice";
 
 function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -21,7 +22,7 @@ function useDebounce(value, delay) {
   return debouncedValue;
 }
 
-const renderSearchQueryData = (data) => {
+const RenderSearchQueryData = ({ data }) => {
   const {
     mal_id,
     title,
@@ -30,9 +31,16 @@ const renderSearchQueryData = (data) => {
       webp: { large_image_url },
     },
   } = data;
+  const dispatch = useDispatch();
 
   return (
-    <Link key={mal_id} to={`/anime/${mal_id}`}>
+    <Link
+      onClick={() => {
+        dispatch(searchValue(""));
+      }}
+      key={mal_id}
+      to={`/anime/${mal_id}`}
+    >
       <div className="flex gap-5 mb-3 items-center hover:bg-slate-200">
         <img
           className="h-40 w-[7rem]"
@@ -46,6 +54,7 @@ const renderSearchQueryData = (data) => {
 };
 
 const SearchData = () => {
+  const hide = useSelector((state) => state.search.hide);
   const query = useSelector((state) => state.search.value);
   const debouncedValue = useDebounce(query, 500);
   const { isFetching, data, error } = useGetAnimeBySearchQuery(debouncedValue, {
@@ -54,8 +63,17 @@ const SearchData = () => {
 
   if (query.length === 0) return null;
   return (
-    <div className="absolute z-10 w-full overflow-y-scroll max-h-[450px] mt-12 px-3 py-[0.25rem] bg-white rounded-l border border-solid border-neutral-300">
-      {data && data.data.map((searchData) => renderSearchQueryData(searchData))}
+    <div
+      className={
+        hide
+          ? "hidden"
+          : "absolute z-10 w-full overflow-y-scroll max-h-[450px] mt-12 px-3 py-[0.25rem] bg-white rounded-l border border-solid border-neutral-300"
+      }
+    >
+      {data &&
+        data.data.map((searchData) => (
+          <RenderSearchQueryData data={searchData} />
+        ))}
       {isFetching && (
         <div>
           <LoaderSmall />

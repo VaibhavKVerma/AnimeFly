@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { searchValue } from "../redux/reducers/searchSlice";
+import { hideInfo, searchValue, showInfo } from "../redux/reducers/searchSlice";
 import { SvgLogo } from "../Constants/Svg";
 import { headerNav } from "../Constants/Constants";
 import SearchData from "./SearchData";
@@ -26,6 +26,15 @@ const Header = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
+  /**
+   * setTimeout to prevent immediate change of hide value to false
+   */
+  const onFocusOut = () => {
+    setTimeout(() => {
+      dispatch(hideInfo());
+    }, 100);
+  };
+
   return (
     <div className="2xl:container 2xl:mx-auto">
       <div className="bg-white py-5 px-7">
@@ -45,7 +54,13 @@ const Header = () => {
                 location.pathname === headerLink.link
               )
             )}
-            <div className="flex relative w-full">
+            <div
+              onFocus={() => {
+                dispatch(showInfo());
+              }}
+              onBlur={onFocusOut}
+              className="flex relative w-full"
+            >
               <div className="relative flex w-full flex-wrap items-stretch">
                 <input
                   type="search"
@@ -57,7 +72,7 @@ const Header = () => {
                   }}
                 />
               </div>
-                <SearchData />
+              <SearchData />
             </div>
           </ul>
         </nav>
