@@ -32,7 +32,7 @@ const Header = () => {
   const onFocusOut = () => {
     setTimeout(() => {
       dispatch(hideInfo());
-    }, 100);
+    }, 200);
   };
 
   return (

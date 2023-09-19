@@ -6,7 +6,7 @@ Website Consists Of :-
 3. Weekly Schedule
 4. Recommendations
 
-Tech Stack Used :- ReactJS,Redux,RTK Query,Tailwind,Axios
+Tech Stack Used :- ReactJS,Redux,RTK Query,Tailwind,Axios,React Router
 
 APIs Used :- JIKAN API,WORLD TIME API,BRAND FETCH API
 

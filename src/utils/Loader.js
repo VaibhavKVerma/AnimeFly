@@ -1,12 +1,12 @@
 import React from "react";
 
-export const LoaderSmall = () => {
+export const LoaderSmall = React.memo(() => {
   return (
     <div className="h-full">
       <div className="loader top-1/2 left-1/2" />
     </div>
   );
-};
+});
 
 const Loader = () => {
   return (

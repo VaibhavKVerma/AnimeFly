@@ -39,12 +39,6 @@ export const actionConstant = {
   search : "search"
 }
 
-export const animeApi = "animeApi";
-export const timeApi = "timeApi";
-export const logoApi = "logoApi";
-export const detailed = "detailed";
-export const search = "search";
-
 export const footerNav = [
   {
     link: "https://vaibhavkumarverma.netlify.app/",

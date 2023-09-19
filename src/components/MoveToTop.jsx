@@ -2,6 +2,15 @@ import React, { useEffect, useState } from "react";
 import { MoveToTopIcon } from "../Constants/Svg";
 
 const MoveToTop = () => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -13,15 +22,6 @@ const MoveToTop = () => {
     if (window.scrollY > window.innerHeight) setShow(true);
     else setShow(false);
   };
-
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div
